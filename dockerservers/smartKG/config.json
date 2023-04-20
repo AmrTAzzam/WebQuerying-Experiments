@@ -1,0 +1,47 @@
+{
+  "title": "My Linked Data Fragments server",
+
+  "datasourcetypes": {
+    "HdtDatasource"       : "org.linkeddatafragments.datasource.hdt.HdtDataSourceType",
+    "JenaTDBDatasource"   : "org.linkeddatafragments.datasource.tdb.JenaTDBDataSourceType"
+  },
+  "datasources": {
+   "watdiv10M": {
+     "title": "WatDiv10M",
+     "type": "HdtDatasource",
+     "description": "WatDiv with HDT back-end",
+     "settings": { "file": "data/watdiv.10M.hdt" }
+   },
+    "watdiv100M": {
+      "title": "WatDiv100M",
+      "type": "HdtDatasource",
+      "description": "WatDiv with HDT back-end",
+      "settings": { "file": "data/watdiv.100M.hdt" }
+ },
+    "watdiv1000M": {
+      "title": "WatDiv1000M",
+      "type": "HdtDatasource",
+      "description": "WatDiv with HDT back-end",
+      "settings": { "file": "data/watdiv.1000M.hdt" }
+    }
+  },
+   "dbpedia-2015": {
+     "title": "dbpedia-2015",
+     "type": "HdtDatasource",
+     "description": "DBpedia with HDT back-end",
+     "settings": { "file": "data/dbpedia2015.hdt" }
+   },
+  "prefixes": {
+    "rdf":         "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":        "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":         "http://www.w3.org/2001/XMLSchema#",
+    "dc":          "http://purl.org/dc/terms/",
+    "foaf":        "http://xmlns.com/foaf/0.1/",
+    "dbpedia":     "http://dbpedia.org/resource/",
+    "dbpedia-owl": "http://dbpedia.org/ontology/",
+    "dbpprop":     "http://dbpedia.org/property/",
+    "hydra":       "http://www.w3.org/ns/hydra/core#",
+    "void":        "http://rdfs.org/ns/void#"
+  }
+}
+

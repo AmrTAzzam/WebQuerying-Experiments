@@ -1,0 +1,9 @@
+SELECT ?v1 ?v2 ?v3 ?v4 ?v5 ?v6 ?v7 ?v8 WHERE {
+	<http://db.uwaterloo.ca/~galuc/wsdbm/User522> <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v1 .
+	?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v2 .
+	?v2 <http://purl.org/stuff/rev#hasReview> ?v3 .
+	?v3 <http://purl.org/stuff/rev#reviewer> ?v4 .
+	?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v5 .
+	?v5 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v6 .
+	?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v7 .
+?v7 <http://schema.org/author> ?v8 }
