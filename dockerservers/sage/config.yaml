@@ -1,0 +1,42 @@
+# The name of the server
+name: SaGe Example Server
+# Server maintainer(s)
+maintainer: Martin Beno
+# Time quantum used by the server
+quota: 75
+# (Optional) Maximum number of results fetched by HTTP request
+max_results: 2000
+# (Optional) Query selected by default in the "Query" section
+default_query:
+  grapg_name: dbpedia
+  name: Select everything
+  value: |
+    SELECT * WHERE {
+      ?s ?p ?o.
+    }
+# RDF Graphs hosted by the server
+graphs:
+-
+  name: WatDiv10M
+  uri: http://kg-server.ai.wu.ac.at:8890/sparql/watdiv10m
+  description: WatDiv with HDT back-end
+  backend: hdt-file
+  file: /opt/data/watdiv.10M.hdt
+-
+  name: WatDiv100M
+  uri: http://kg-server.ai.wu.ac.at:8890/sparql/watdiv100m
+  description: WatDiv with HDT back-end
+  backend: hdt-file
+  file: /opt/data/watdiv.100M.hdt
+-
+  name: WatDiv1000M
+  uri: http://kg-server.ai.wu.ac.at:8890/sparql/watdiv1000m
+  description: WatDiv with HDT back-end
+  backend: hdt-file
+  file: /opt/data/watdiv.1000M.hdt
+-
+  name: dbpedia
+  uri: http://kg-server.ai.wu.ac.at:8890/sparql/dbpedia
+  description: The DBpedia dataset
+  backend: hdt-file
+  file: /opt/data/dbpedia2015.hdt

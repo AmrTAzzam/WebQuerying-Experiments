@@ -1,0 +1,17 @@
+ PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  dbpo: <http://dbpedia.org/ontology/>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX  pos:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  bif:  <bif:>
+
+SELECT DISTINCT  ?s
+WHERE
+  { ?s   rdf:type      ?type ;
+         pos:lat       ?lat ;
+         pos:long      ?long ;
+         ?ptext        ?o1 .
+
+    FILTER langMatches(lang(?o1), "en")
+    FILTER ( ?type IN (dbpo:Place, pos:SpatialThing) )
+    FILTER ( ( ( ?long > 0 ) )&& ( ?lat < 80 ) )
+  }

@@ -1,0 +1,51 @@
+version: "3.7"
+services:
+  tpf-server:
+    container_name: tpf-server
+    image: tpf-server
+    ports:
+      - 8080:8080
+    volumes:
+      - $PWD/TPF/config.json:/server/config.json
+      - $PWD/data:/server/data
+  spf-server:
+    container_name: spf-server
+    image: spf-server
+    ports:
+      - 8081:8080
+    volumes:
+      - $PWD/SPF/config.json:/server/config.json
+      - $PWD/data:/server/data
+  brtpf-server:
+    container_name: brtpf-server
+    image: brtpf-server
+    ports:
+      - 8082:8080
+    volumes:
+      - $PWD/brTPF/config.json:/server/config.json
+      - $PWD/data:/server/data
+  smartkg-server:
+    container_name: smartkg-server
+    image: smartkg-server
+    ports:
+      - 8083:8080
+    volumes:
+      - $PWD/smartKG/config.json:/server/config.json
+      - $PWD/data:/server/dat
+  wisekg-server:
+    container_name: wisekg-server
+    image: wisekg-server
+    ports:
+      - 8084:8080
+    volumes:
+      - $PWD/WiseKG/config.json:/server/config.json
+      - $PWD/data:/server/data
+  sage-server:
+    container_name: sage-server
+    image: callidon/sage
+    command: sage /opt/config.yaml -w 4 -p 8890
+    ports:
+      - 8890:8890
+    volumes:
+      - $PWD/sage/config.yaml:/opt/config.yaml
+      - $PWD/data:/opt/data

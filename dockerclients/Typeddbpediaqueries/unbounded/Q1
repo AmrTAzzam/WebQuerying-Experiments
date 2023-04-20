@@ -1,0 +1,15 @@
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  pos:  <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT  count(*)
+WHERE
+  { ?link   pos:lat          ?lat ;
+            pos:long         ?long ;
+            rdfs:label       ?label ;
+            rdf:type         ?type .
+    ?type   rdfs:subClassOf  ?super .
+    ?super  rdfs:label     ?m
+    FILTER ( ( ( ( ( ( xsd:double(?lat) - 52.036808 ) <= 0.05 ) && ( ( 52.036808 - xsd:double(?lat) ) <= 0.05 ) ) && ( ( xsd:double(?long) - -0.746727 ) <= 0.05 ) ) && ( ( -0.746727 - xsd:double(?long) ) <= 0.05 ) ) && ( lang(?label) = "en" ) )
+  }
