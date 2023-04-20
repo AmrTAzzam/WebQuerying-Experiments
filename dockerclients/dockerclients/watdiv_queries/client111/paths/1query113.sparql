@@ -1,6 +1,0 @@
-SELECT ?v1 ?v2 ?v3 ?v4 ?v5 WHERE {
-	<http://db.uwaterloo.ca/~galuc/wsdbm/User614> <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v1 .
-	?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v2 .
-	?v2 <http://purl.org/stuff/rev#hasReview> ?v3 .
-	?v3 <http://purl.org/stuff/rev#reviewer> ?v4 .
-?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v5 }

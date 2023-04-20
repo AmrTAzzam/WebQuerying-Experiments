@@ -1,1 +1,0 @@
-SELECT * WHERE { 	?v0 <http://xmlns.com/foaf/homepage> <http://db.uwaterloo.ca/~galuc/wsdbm/Website137> . 	?v0 <http://schema.org/text> ?v2 . } #end }
