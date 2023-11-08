@@ -1,1 +1,1 @@
-Download the data from https://smartkg.cluster.ai.wu.ac.at
+Download the data from https://smartkg-data.cluster.ai.wu.ac.at/
